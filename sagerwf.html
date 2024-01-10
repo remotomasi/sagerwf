@@ -1,0 +1,115 @@
+<!doctype html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sager WF</title>
+    <script type="text/javascript" src="sager_cast.js"></script>
+</head>
+
+<body>
+
+    <script language="javascript">
+        function sagercrap() {
+            press = document.bert.press.value * 1;
+            nubes = document.bert.sky.value;
+            wind = document.bert.wind.value;
+            trend = document.bert.trend.value;
+            wchange = document.bert.wchange.value;
+            johnny = document.getElementById('forecast');
+            johnny.innerHTML = sager_cast(wind, wchange, press, trend, nubes);
+        }	// END function babblecrap()
+    </script>
+
+    <form name="bert" onSubmit="sagercrap(); return false">
+        <script src="sager_cast.js"></script>
+        <header>
+            <h1>Sager Algorithm Weather Forecast</h1>
+        </header>
+        <font size="2" face="Arial, Helvetica, sans-serif">Direction:</font>
+        <select name="wind" id="wind" size="1">
+            <option selected value="calm">Calm
+            <option value="N">N
+            <option value="NE">NE
+            <option value="E">E
+            <option value="SE">SE
+            <option value="S">S
+            <option value="SW">SW
+            <option value="W">W
+            <option value="NW">NW
+        </select></td>
+        <br /><br />
+        <td width="50%">
+            <font size="2" face="Arial, Helvetica, sans-serif">Direction change:</font>
+            <select name="wchange" size="1">
+                <option value="BACKING">Backing
+                <option value="STEADY" selected>Steady
+                <option value="VEERING">Veering
+            </select>
+        </td><br /><br />
+        <td width="20%" bgcolor="#FFFFFF">
+            <font size="2" face="Arial, Helvetica, sans-serif">Pressure: <br />(Relative / <b>M</b>ean <b>S</b>ea
+                <b>L</b>evel)</font>
+        </td>
+        <td width="30%">
+            <select name="press" size="1">
+                <option value=1>1029.5-1049.8
+                <option value=2>1019.3-1029.5
+                <option selected value=3>1012.5-1019.3
+                <option value=4>1005.8-1012.5
+                <option value=5>999.0-1005.8
+                <option value=6>988.8-999.0
+                <option value=7>975.3-988.8
+                <option value=8>948.2-975.3
+            </select>
+            <font size="2" face="Arial, Helvetica, sans-serif">hPa</font>
+        </td>
+        <br /><br />
+        <td width="50%">
+            <font size="2" face="Arial, Helvetica, sans-serif">Trend:</font>
+            <select name="trend" size="1">
+                <option value=1>Rising Rapidly
+                <option value=2>Rising Slowly
+                <option selected value=3>Normal
+                <option value=4>Falling Slowly
+                <option value=5>Falling Rapidly
+            </select>
+        </td>
+        <br /><br />
+        <td width="20%" bgcolor="#FFFFFF">
+            <font size="2" face="Arial, Helvetica, sans-serif">Clouds:</font>
+        </td>
+        <td colspan="2">
+            <select name="sky" size="1">
+                <option value=1 selected>Clear
+                <option value=2>Partly Cloudly
+                <option value=3>Mostly Overcast
+                <option value=4>Overcast
+                <option value=5>Rain
+            </select>
+        </td>
+        <br /><br />
+
+        <input type="submit" value="Elaborate...">
+    </form>
+    <br />
+    <table border="0" cellspacing="1" cellpadding="5" align="center" width="100%">
+        <tr bgcolor="#0400ff">
+            <td>
+                <font size="4" face="Arial, Helvetica, sans-serif" style="color:white"><b>Forecast for next 12/24 hours:</b> <span
+                        id="forecast">Your forecast here</span></font>
+                </font>
+            </td>
+        </tr>
+        <tr bgcolor="#EFEFEF">
+            <td width="30%" bgcolor="#EFEFEF">
+                <font size="2" face="Arial, Helvetica, sans-serif"></font>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
